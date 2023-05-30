@@ -82,7 +82,7 @@ class DetailPage extends StatelessWidget {
                     Expanded(
                       child: StepProgressIndicator(
                         totalSteps: totalTodos == 0 ? 1 : totalTodos,
-                        currentStep: homeCtrl.doingTodos.length,
+                        currentStep: homeCtrl.doneTodos.length,
                         size: 5,
                         padding: 0,
                         selectedGradientColor: LinearGradient(

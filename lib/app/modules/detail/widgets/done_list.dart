@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:todo_app_getx/app/core/utils/extensions.dart';
+import 'package:todo_app_getx/app/core/values/colors.dart';
 import 'package:todo_app_getx/app/modules/home/controller.dart';
 
 class DoneList extends StatelessWidget {
@@ -31,27 +32,48 @@ class DoneList extends StatelessWidget {
                 ),
               ),
               ...homeCtrl.doneTodos
-                  .map((element) => Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 3.0.wp, horizontal: 9.0.wp),
-                        child: Row(
-                          children: [
-                            const SizedBox(
-                              width: 20,
-                              height: 20,
-                              child: Icon(Icons.done),
+                  .map((element) => Dismissible(
+                        key: ObjectKey(element),
+                        direction: DismissDirection.endToStart,
+                        onDismissed: (_) =>
+                            homeCtrl.deleteDoneTodo(element['title']),
+                        background: Container(
+                          color: Colors.red.withOpacity(0.8),
+                          alignment: Alignment.centerRight,
+                          child: Padding(
+                            padding: EdgeInsets.only(right: 5.0.wp),
+                            child: const Icon(
+                              Icons.delete,
+                              color: Colors.white,
                             ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 4.0.wp),
-                              child: Text(
-                                element['title'],
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                  decoration: TextDecoration.lineThrough,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 3.0.wp, horizontal: 9.0.wp),
+                          child: Row(
+                            children: [
+                              const SizedBox(
+                                width: 20,
+                                height: 20,
+                                child: Icon(
+                                  Icons.done,
+                                  color: blue,
                                 ),
                               ),
-                            )
-                          ],
+                              Padding(
+                                padding:
+                                    EdgeInsets.symmetric(horizontal: 4.0.wp),
+                                child: Text(
+                                  element['title'],
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                    decoration: TextDecoration.lineThrough,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ))
                   .toList()
