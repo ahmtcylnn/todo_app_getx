@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:todo_app_getx/app/core/utils/extensions.dart';
 import 'package:todo_app_getx/app/modules/detail/widgets/doing_list.dart';
+import 'package:todo_app_getx/app/modules/detail/widgets/done_list.dart';
 import 'package:todo_app_getx/app/modules/home/controller.dart';
-
-import '../../data/models/task.dart';
 
 class DetailPage extends StatelessWidget {
   final homeCtrl = Get.find<HomeController>();
@@ -138,10 +135,12 @@ class DetailPage extends StatelessWidget {
                   if (value == null || value.trim().isEmpty) {
                     return 'Please enter your todo item';
                   }
+                  return null;
                 },
               ),
             ),
             DoingList(),
+            DoneList(),
           ],
         ),
       ),

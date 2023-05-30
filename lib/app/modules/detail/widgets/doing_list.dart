@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:todo_app_getx/app/core/utils/extensions.dart';
 import 'package:todo_app_getx/app/modules/home/controller.dart';
 
@@ -13,7 +9,7 @@ class DoingList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => homeCtrl.doingTodos.isEmpty && homeCtrl.doingTodos.isEmpty
+    return Obx(() => homeCtrl.doingTodos.isEmpty && homeCtrl.doneTodos.isEmpty
         ? Column(
             children: [
               Image.asset(
