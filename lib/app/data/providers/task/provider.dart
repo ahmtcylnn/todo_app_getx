@@ -1,10 +1,7 @@
 import 'dart:convert';
-
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:todo_app_getx/app/core/utils/keys.dart';
 import 'package:todo_app_getx/app/data/services/storage/services.dart';
-
 import '../../models/task.dart';
 
 class TaskProvider {

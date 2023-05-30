@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:todo_app_getx/app/core/utils/extensions.dart';
-import 'package:todo_app_getx/app/core/values/colors.dart';
 import 'package:todo_app_getx/app/data/models/task.dart';
 import 'package:todo_app_getx/app/modules/home/controller.dart';
 
@@ -92,7 +90,7 @@ class AddCard extends StatelessWidget {
                                 : EasyLoading.showError('Duplicated Task');
                           }
                         },
-                        child: Text('Confirm'))
+                        child: const Text('Confirm'))
                   ],
                 ),
               ));

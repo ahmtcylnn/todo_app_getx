@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
 import 'package:todo_app_getx/app/core/utils/extensions.dart';
 import 'package:todo_app_getx/app/modules/home/controller.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
-
 import '../../../data/models/task.dart';
 
 class TaskCard extends StatelessWidget {
@@ -38,7 +35,7 @@ class TaskCard extends StatelessWidget {
               end: Alignment.bottomRight,
               colors: [color.withOpacity(0.5), color],
             ),
-            unselectedGradientColor: LinearGradient(
+            unselectedGradientColor: const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [Colors.white, Colors.white],
