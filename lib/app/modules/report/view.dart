@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:todo_app_getx/app/core/utils/extensions.dart';
 import 'package:todo_app_getx/app/core/values/colors.dart';
